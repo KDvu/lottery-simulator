@@ -8,7 +8,6 @@ function appendNumbers(){
 		return;
 	}
 	
-	
 	var counter = 0;
 	
 	$('.number_box').remove();
@@ -23,5 +22,29 @@ function appendNumbers(){
 
 //This function is executed when the 'Roll lottery' button is clicked
 function rollLottery(){
-	$('#1').css("background-color", "red");
+	var max = $('#txt_number').val();
+	var num = getRandom(5,5);
+	var num_id = 0;
+			
+	for(i=0; i<5;i++){
+		num_id = Math.floor(getRandom(1, max));
+	
+		changeColor("#" + num_id, "red" );
+	
+		setInterval(changeColor, 2000, "#" + num_id, "white" );
+		
+	}
+	
+	num_id = Math.floor(getRandom(1, max));
+
+	changeColor("#" + num_id,"red");	
+}
+
+function changeColor(id, color){
+	$(id).parent().css("background-color", color);
+}
+
+
+function getRandom(min, max) {
+  return Math.random() * (max - min) + min;
 }

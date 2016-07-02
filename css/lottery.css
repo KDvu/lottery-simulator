@@ -18,8 +18,10 @@
 }
 
 .number_box{
+	transition-duration: 2s;
+
 	display: table-cell; 
-	width:50px;
+	width:5%;
 	height:50px;
 	margin: 10px 20px;
 	text-align:center;
