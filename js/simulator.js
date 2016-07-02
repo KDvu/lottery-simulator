@@ -15,8 +15,13 @@ function appendNumbers(){
 	$('br').remove();
 	for(i=1;i<=max;i++){
 		counter++;
-		$('#main').append("<div class='number_box'> <span class='number'>" + i + " </span></div>");
+		$('#main').append("<div class='number_box'> <span class='number' id='"+i+"'>" + i + " </span></div>");
 		if(counter%14 == 0)
 			$('#main').append("</br>");
 	}
+}
+
+//This function is executed when the 'Roll lottery' button is clicked
+function rollLottery(){
+	$('#1').css("background-color", "red");
 }
