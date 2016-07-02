@@ -3,7 +3,7 @@ function appendNumbers(){
 	//MAX NUMBER IS 84, otherwise the page formats gets ruined
 	var max = $('#txt_number').val(); //
 	
-	if(max >84){
+	if(max >100){
 		alert("This number is too big");
 		return;
 	}
@@ -15,7 +15,7 @@ function appendNumbers(){
 	for(i=1;i<=max;i++){
 		counter++;
 		$('#main').append("<div class='number_box'> <span class='number' id='"+i+"'>" + i + " </span></div>");
-		if(counter%14 == 0)
+		if(counter%24== 0)
 			$('#main').append("</br>");
 	}
 }
@@ -31,13 +31,19 @@ function rollLottery(){
 	
 		changeColor("#" + num_id, "red" );
 	
-		setInterval(changeColor, 2000, "#" + num_id, "white" );
+		setInterval(changeColor, 1500, "#" + num_id, "white" );
 		
 	}
 	
 	num_id = Math.floor(getRandom(1, max));
+	changeColor("#" + num_id,"red");
+	
+	setTimeout(printMessage, 3000, num_id + " is the winner!");
 
-	changeColor("#" + num_id,"red");	
+}
+
+function printMessage(message){
+		alert(message);
 }
 
 function changeColor(id, color){
