@@ -34,3 +34,8 @@
 .number{
 	font-size: 1.8em;
 }
+
+button:disabled {
+  border: 3px solid #66c;
+  opacity: 0.5;
+}

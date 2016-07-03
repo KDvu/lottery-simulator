@@ -1,5 +1,8 @@
 //This function is executed when the submit button is clicked
 function appendNumbers(){
+	//Enable roll lottery button
+    document.getElementById("button_roll").disabled = false;
+	
 	//MAX NUMBER IS 84, otherwise the page formats gets ruined
 	var max = $('#txt_number').val(); //
 	
